@@ -1,0 +1,164 @@
+{
+	"variables": [],
+	"info": {
+		"name": "inventory",
+		"_postman_id": "4bca5b0d-3057-f415-71a0-30721a167e90",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Product",
+			"request": {
+				"url": "{{host}}:{{port}}/rest/product/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjNAYWRtaW4uY29tIiwidXNlcm5hbWUiOiJhZG1pbjNAYWRtaW4uY29tIiwicm9sZSI6IlJPTEVfQURNSU4ifQ.K13Bqyn_WRCV4x0cv7waNOiQ-CLIRycGCYmEL44NQgh_yiP6jf24c0IuFfzKTWBQ-I0L8AA139FlnUSwRlMIUA",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\":\"Product 1\",\n\t\"description\":\"This is a sample product\",\n\t\"noOfNights\":2,\n\t\"price\":120,\n\t\"details\":[\n\t\t{\t\"itenary\":\"details1\",\n\t\t\t\"details\":\"details1\",\n\t\t\t\"day\":1,\n\t\t\t\"imageUrl\":\"details1\"\n\t\t\t\n\t\t}\n\t\t]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Package",
+			"request": {
+				"url": "{{host}}:{{port}}/api/packages",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"id\": 3,\n        \"tourName\": \"tour 1\",\n        \"noOfDays\": 2,\n        \"noOfNights\": 2,\n        \"price\": 120,\n        \"imageUrl\": null,\n        \"details\": [\n            {\n                \"id\": 11,\n                \"itenary\": \"details1\",\n                \"description\": null,\n                \"day\": 1,\n                \"imageUrl\": \"details1\",\n                \"packageModel\": null,\n                \"price\": null\n            },\n            {\n            \t \"id\": 14,\n                \"itenary\": \"details2\",\n                \"description\": null,\n                \"day\": 2,\n                \"imageUrl\": \"details1\",\n                \"packageModel\": null,\n                \"price\": null\n            }\n        ]\n    }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Packages",
+			"request": {
+				"url": "{{host}}:{{port}}/api/packages",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"tourName\":\"tourName\",\n\t\"noOfDays\":2,\n\t\"noOfNights\":2,\n\t\"price\":100,\n\t\"details\":[\n\t\t{\t\"itenary\":\"demo\",\n\t\t\t\"details\":\"demo\",\n\t\t\t\"day\":1,\n\t\t\t\"imageUrl\":\"demo\"\n\t\t\t\n\t\t}\n\t\t]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Packages by id",
+			"request": {
+				"url": "{{host}}:{{port}}/api/packages/2",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"tourName\":\"tourName\",\n\t\"noOfDays\":2,\n\t\"noOfNights\":2,\n\t\"price\":100,\n\t\"details\":[\n\t\t{\t\"itenary\":\"demo\",\n\t\t\t\"details\":\"demo\",\n\t\t\t\"day\":1,\n\t\t\t\"imageUrl\":\"demo\"\n\t\t\t\n\t\t}\n\t\t]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Upload file",
+			"request": {
+				"url": "{{host}}:{{port}}/upload",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"value": "",
+							"description": "",
+							"type": "file"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Register User",
+			"request": {
+				"url": "{{host}}:{{port}}/user/register",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstname\":\"admin1\",\n\t\"lastname\":\"admin1\",\n\t\"username\":\"admin1@admin.com\",\n\t\"password\":\"admin\",\n\t\"role\":1\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Login user",
+			"request": {
+				"url": "{{host}}:{{port}}/user/register",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstname\":\"admin1\",\n\t\"lastname\":\"admin1\",\n\t\"username\":\"admin1@admin.com\",\n\t\"password\":\"admin\",\n\t\"role\":1\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,12 @@
+<div class="well">
+  <h4>Multi Select Search Box</h4>
+  <input ng-model="searchCondition" />
+  <div ng-repeat="item in items | filter:searchTerm">
+    <input id="{{item[label]}}" 
+      ng-checked="selectedItems.indexOf(item) > -1" 
+      ng-click="toggleSelection(item)" 
+      type="checkbox" 
+      value="{{item[label]}}" />
+    <label>{{item[label]}}</label>
+  </div>
+</div>
